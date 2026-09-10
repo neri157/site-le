@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+   
+    <head>
+        <!--inicio tela de login-->
+     <section>
+        <meta name="description" content="site">
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <title>site pica</title>
+        <h1>Login</h1>
+</section>
+    </head>
+    <body>
+        <h1>porra</h1>
+        <!--caixas de de informacoes-->
+        <section>
+       <form>
+              
+                <legend>Informações de login</legend>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="name"><br>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="name"><br>
+                <label for="lembre de mim"><input type="checkbox"> Lembre de mim</label><br>
+                <label for="cadastro">Cadastre-se</label>
+                <button onclick="alert ('Tua merda foi feita')">faça login</button>
+                
+            </form>
+        </section>
+
+        
+    
+    </body>
+    
+
+    <main>
+
+    </main>
+    <footer>
+        
+    </footer>
+    </html>
