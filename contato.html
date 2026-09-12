@@ -7,7 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <title>Entre em contato conosco!</title>
-     <style>
+    <!--hamburger-->
+    <style>
     .menu-btn {
             font-size: 25px;
             background: white;
@@ -36,11 +37,11 @@
             color: black;
         }
     
-   </style>
+</style>
 </head>
 <body>
     <section>
-      <header>
+    <header>
 
 
     <button class="menu-btn" onclick="abrirMenu()">☰</button>
@@ -62,6 +63,23 @@ function abrirMenu() {
 
     
     <section>
+
+        <!--comentarios-->
+        <section>
+            <h2>Nos de seu feedback</h2>
+            <form>
+                <fieldset>
+                    <legend>Informaçoes de contato</legend>
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email">
+                    <label for="comentarios">Deixe aqui seu comentário!</label>
+                    <textarea name="comentarios" id="comentarios" rows="4" cols="50" placeholder="Fala tua bosta :)"></textarea><br>
+                    <button onclick=Envie seu comentário</button>
+                </fieldset>
+            </form>
+        </section>
     
 </body>
 </html>
