@@ -1,0 +1,251 @@
+/* =========================================================
+  Ecodigitalidade — folha de estilos
+
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #1A1A18;
+  --muted: #6E6E68;
+  --paper: #FAFAF9;
+  --paper-alt: #F3F2ED;
+  --line: #E3E2DC;
+  --accent: #4B6656;
+  --accent-ink: #2E4038;
+  --max-width: 680px;
+  --gutter: clamp(20px, 5vw, 64px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Public Sans', -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Barra de navegação (header que contém #menu) ---------- */
+
+header:has(#menu) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 20px var(--gutter);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.menu-btn {
+  font-size: 20px;
+  line-height: 1;
+  padding: 8px 10px;
+  color: var(--ink);
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+
+.menu-btn:hover {
+  background: var(--paper-alt);
+}
+
+.menu-btn:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+#menu.ativo {
+  top: 62px;
+  right: var(--gutter);
+  left: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  padding: 12px;
+  gap: 4px;
+  min-width: 160px;
+}
+
+#menu a {
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  color: var(--ink);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+#menu a:hover {
+  background: var(--paper-alt);
+  color: var(--accent-ink);
+}
+
+/* ---------- Numeração discreta das seções ---------- */
+/* A seção real segue uma sequência: intro > importância > educação > conclusão */
+
+section section {
+  counter-reset: parte;
+}
+
+/* Hero (h1) — sem numeração, é a abertura do texto */
+header:has(h1) {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 96px) var(--gutter) 32px;
+  border-bottom: 1px solid var(--line);
+}
+
+header:has(h1) h1 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* h2 / h3 — títulos de seção, com número de contexto na margem */
+header:has(h2),
+header:has(h3) {
+  counter-increment: parte;
+  max-width: var(--max-width);
+  margin: 64px auto 0;
+  padding: 0 var(--gutter);
+  position: relative;
+}
+
+header:has(h2)::before,
+header:has(h3)::before {
+  content: counter(parte, decimal-leading-zero);
+  display: block;
+  font-family: 'Public Sans', sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+header:has(h2) h2 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.4rem, 3vw, 1.75rem);
+  color: var(--ink);
+  margin: 0 0 8px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+header:has(h3) h3 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--accent-ink);
+  margin: 0 0 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------- Corpo de texto ---------- */
+
+section p {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  color: var(--ink);
+}
+
+section p + p {
+  margin-top: 20px;
+}
+
+section p b {
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+
+/* ---------- Imagens ---------- */
+
+img {
+  display: block;
+  max-width: var(--max-width);
+  width: calc(100% - (var(--gutter) * 2));
+  height: auto;
+  margin: 32px auto;
+  border: 1px solid var(--line);
+}
+
+/* ---------- Rodapé ---------- */
+
+footer {
+  margin-top: 80px;
+  padding: 40px var(--gutter) 56px;
+  border-top: 1px solid var(--line);
+  background: var(--paper-alt);
+  text-align: left;
+}
+
+footer p {
+  max-width: var(--max-width);
+  margin: 0 auto 8px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+footer a {
+  color: var(--accent-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 640px) {
+  header:has(#menu) {
+    justify-content: space-between;
+    padding: 16px var(--gutter);
+  }
+
+  #menu.ativo {
+    left: var(--gutter);
+    right: var(--gutter);
+    min-width: 0;
+  }
+
+  header:has(h1) {
+    padding-top: 40px;
+  }
+}
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .menu-btn,
+  #menu a,
+  footer a {
+    transition: none;
+  }
+}
