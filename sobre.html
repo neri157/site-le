@@ -2,13 +2,87 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="site">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <title>Sobre nós!</title>
+    <title>Sobre nós</title>
+   <style>
+    .menu-btn {
+            font-size: 25px;
+            background: white;
+            border: 0px solid white;
+            cursor: pointer;
+        }
+
+        #menu {
+            display: none;
+        }
+
+        #menu.ativo {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background: white;
+            padding: 15px;
+            gap: 10px;
+            border: 1px solid #ccc;
+        }
+
+        #menu a {
+            text-decoration: none;
+            color: black;
+        }
+    
+   </style>
 </head>
 <body>
+    <section>
+      <header>
+
+
+    <button class="menu-btn" onclick="abrirMenu()">☰</button>
+
+    <nav id="menu">
+        <a href="index.html">Início</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="contato.html">Contato</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<script>
+function abrirMenu() {
+    document.getElementById("menu").classList.toggle("ativo");
+}
+</script>
+
+    
+    <section>
+    <!--sobre nois-->
+    
+    <section>
+        <header><h1>Sobre nós!</h1></header>
+        <br> <b>Sobre nós</b>
+
+
+Somos uma empresa <b>brasileira</b> de ecodigitalidade, formada por uma equipe de desenvolvedores que acredita no poder da tecnologia para construir um futuro mais <b>sustentável, consciente e conectado.</b>
+
+Nossa missão é desenvolver soluções digitais que aproximem tecnologia, sustentabilidade e sociedade, mostrando como a inovação pode contribuir para um Brasil mais <b>eficiente e ambientalmente responsável.</b>
+
+Por meio deste projeto, buscamos apresentar informações, ideias e iniciativas relacionadas à <b>ecodigitalidade no Brasil</b>, destacando a importância do uso consciente da tecnologia e de práticas que promovam o desenvolvimento sustentável.
+
+Trabalhamos com criatividade, colaboração e inovação para transformar ideias em experiências digitais acessíveis e relevantes. <b>Nosso objetivo é unir tecnologia e responsabilidade ambiental, contribuindo para uma nova visão sobre o futuro digital do nosso país.</b>
+
+<b>Tecnologia para transformar. Inovação para evoluir. Sustentabilidade para preservar.</b>
+
+
+
+    </section>
+
     
 </body>
 </html>
